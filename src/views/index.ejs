@@ -1,0 +1,101 @@
+<html>
+<style>
+    input {
+        display: block;
+
+    }
+    form {
+        min-height: 0px;
+        display: block;
+        position: absolute;
+    }
+
+    .column {
+        float: left;
+        width: 33.33%;
+        border: 1px solid black;
+        min-height: 50px;
+    }
+
+    .column-text {
+        float: left;
+        width: 33.33%;
+        height: 50px;
+        border: 1px solid black;
+    }
+
+    .column-blank {
+        float: left;
+        width: 33.33%;
+        min-height: 50px;
+        border: 1px solid black;
+    }
+
+    .column-blank-right {
+        float: right;
+        min-height: 50px;
+        width: 33.33%;
+        margin-top: -55px;
+        border: 1px solid black;
+    }
+
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+        border: 1px solid black;
+    }
+
+    .container {
+        max-height: 200px;
+    }
+
+</style>
+    <a href = '/reset'>click here to reset</a>
+    <div class="container">
+
+
+    <div class="row">
+    <div class="column-blank"></div>
+    <div class="column">
+        <form action="/addSentence" method="post">
+            <%- typeof one == 'undefined' ? '<textarea  id="text-1" name="one" ></textarea> <input type="submit"/>' : one  %>
+        </form>
+    </div>
+    <div class="column-blank-right"></div>
+
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <form action="/addSentence" method="post">
+                <%- typeof two == 'undefined' ? '<textarea  id="text-2" name="two" ></textarea> <input type="submit"/>' : two  %>
+            </form>
+        </div>
+
+        <div class="column-text">
+            <%- typeof last == 'undefined' ? 'Thre was three little pigs' : last  %>
+        </div>
+        <div class="column-blank-right">
+            <form action="/addSentence" method="post">
+                <%- typeof three == 'undefined' ? '<textarea  id="text-3" name="three" ></textarea> <input type="submit"/>' : three  %>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column-blank"></div>
+        <div class="column">
+            <form action="/addSentence" method='post'>
+                <%- typeof four == 'undefined' ? '<textarea  id="text-4" name="four" ></textarea> <input type="submit"/>' : four  %>
+            </form>
+
+        </div>
+        <div class="column-blank-right"></div>
+
+    </div>
+    </div>
+</html>
